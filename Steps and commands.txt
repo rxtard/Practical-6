@@ -1,9 +1,12 @@
+PRACTICAL NO: 06
+Aim: Displaying Time over 4-Digit 7-Segment Display using Raspberry Pi.
 Connection scheme Raspberry Pi
 TM1637 Board Pin	Function	RPI pin		Raspberry Function
-GND			Ground		14		GND
-VCC			+5V Power	4		5V
-DI0			Data In		18		GPIO 24
-CLK			Clock		16		GPIO 23
+GND			        Ground		14		    GND
+VCC			        +5V Power	4		    5V
+DI0			        Data In		18		    GPIO 24
+CLK			        Clock		16		    GPIO 23
+Jumper cable type: Female to Female
 Step 1: Open the terminal and enter the following command
 pip install RPi.GPIO –break-system-packages
 To control the LED, we use special script with pre-defined functions. Various function are available in the script, for example you can display numbers and adjust the intensity of the LEDs. Download the script with the command:
