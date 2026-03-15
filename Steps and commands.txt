@@ -1,0 +1,29 @@
+Connection scheme Raspberry Pi
+TM1637 Board Pin	Function	RPI pin		Raspberry Function
+GND			Ground		14		GND
+VCC			+5V Power	4		5V
+DI0			Data In		18		GPIO 24
+CLK			Clock		16		GPIO 23
+Step 1: Open the terminal and enter the following command
+pip install RPi.GPIO –break-system-packages
+To control the LED, we use special script with pre-defined functions. Various function are available in the script, for example you can display numbers and adjust the intensity of the LEDs. Download the script with the command:
+https://github.com/bhoomikapansare/7Segment.git
+Step 2: Type the following python program in Thonny
+import sys
+import time
+import datetime
+import RPi.GPIO as GPIO
+import tml1637
+GPIO.setmode(GPIO.BCM) 
+Display =tml1637.TM1637()
+Display.Clear()
+Display.SetBrightness(1) 
+while True:
+    now=datetime.datetime.now()
+    hour=now.hour
+    minute=now.minute
+    second=now.second
+    currenttime=[int(hour/10),hour%10,int(minute/10),minute%10]
+    Display.Show(currenttime)
+    Display.ShowDoublepoint(second%2)
+    time.sleep(1)
